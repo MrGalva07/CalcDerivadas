@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Derivadas</title>
+    <link rel="stylesheet" href="/src/reset.css">
+    <link rel="stylesheet" href="/src/style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://unpkg.com/mathjs/lib/browser/math.js"></script>
+    <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+   
+</head>
+<body>
+    <header>
+        <h1 class="title">°MathMax°</h1>
+    </header>
+    <div class="calculator">
+        <h1>Calculadora de Derivadas</h1>
+        <div class="input-container">
+            <label for="function-input" style="font-size: 20pt;">f(x) = </label>
+            <math-field id="function-input" style="width: 70%; margin-right: 5px; font-size: 25pt; cursor: pointer;" placeholder="Insira a funçãoaqui"    ></math-field>
+            <button onclick="calculateDerivative()" id="derive-button" class="buttonDeriv">Derivar</button>
+        </div>
+        <div class="resultado"><h4>Seu resultado é:</h4></div>
+        <div id="output" class="output"></div>
+        <div class="buttons-container">
+            <button onclick="insertValue('x')" class="keypadButton"><img alt="Ícone" src="/images/variavel-x.png" style="width: 20px;"></button>
+            <button onclick="insertValue('x^2')" class="keypadButton"><img alt="Ícone" src="images/elevado-a.png" style="width: 20px;"></button>
+            <button onclick="insertValue('+')" class="keypadButton"><img alt="Ícone" src="/images/soma.png" style="width: 18px;"></button>
+            <button onclick="insertValue('π')" class="keypadButton"><img alt="Ícone" src="/images/pi.png" style="width: 18px;"></button>
+            <button onclick="insertValue('1/2')" class="keypadButton"><img alt="Ícone" src="images/fracao.png" style="width: 20px;"></button>
+            <button onclick="insertValue('*')" class="keypadButton"><img alt="Ícone" src="/images/multiplicacao-variaveis.png"></button>
+            <button onclick="insertValue('√')" class="keypadButton"><img alt="Ícone" src="/images/raiz-quadrada.png"></button>
+            <button onclick="insertValue('^2')" class="keypadButton"><img alt="Ícone" src="/images/elevar-variavel.png"></button>
+            <button onclick="insertValue('ln(')" class="keypadButton"><img alt="Ícone" src="images/logaritmo-natural.png"style="height: 36px; width: 60px;"></button>
+            <button onclick="insertValue('e^2')" class="keypadButton"><img alt="Ícone" src="/images/euler-elevado-a.png"></button>
+            <button onclick="insertValue('sin(')" class="keypadButton"><img alt="Ícone" src="images/seno.png"style="height: 36px; width: 60px;"></button>
+            <button onclick="insertValue('cos(')" class="keypadButton"><img alt="Ícone" src="/images/cosseno.png"style="height: 36px; width: 60px;"></button>
+            <button onclick="insertValue('tan(')" class="keypadButton"><img alt="Ícone" src="/images/tangente.png"style="height: 36px; width: 60px;"></button>
+            <button onclick="insertValue('sec(')" class="keypadButton"><img alt="Ícone" src="/images/secante.png"style="height: 36px; width: 60px;"></button>
+            <button onclick="insertValue('csc(')" class="keypadButton"><img alt="Ícone" src="images/cossecante.png"style="height: 36px; width: 60px;"></button>
+            <button onclick="insertValue('cot(')" class="keypadButton"><img alt="Ícone" src="/images/cotangente.png" style="height: 36px; width: 60px;"></button>
+          </div>
+          
+        <div class="examples-container">
+            <h2>Exemplos - Edite a partir de uma derivada</h2>
+            <div class="example" onclick="setInputValue('x^2 + 2x - 3')">$$\frac{d}{dx}(x^2 + 2x - 3)$$</div>
+            <div class="example" onclick="setInputValue('x^2 + \\ln(x)')">$$\frac{d}{dx}(x^2 + \ln(x))$$</div>
+            <div class="example" onclick="setInputValue('\\sin(x) + 1')">$$\frac{d}{dx}(\sin(x) + 1)$$</div>
+            <div class="example" onclick="setInputValue('\\sin(y) + 2x^3')">$$\frac{d}{dy}(\sin(y) + 2x^3)$$</div>
+            <div class="example" onclick="setInputValue('\\tan(x) \\cdot x^3')">$$\frac{d}{dx}(\tan(x) \cdot x^3)$$</div>
+            <div class="example" onclick="setInputValue('\\frac{\\sin(x)}{\\ln(x)}')">$$\frac{d}{dx}(\frac{\sin(x)}{\ln(x)})$$</div>
+            <div class="example" onclick="setInputValue('e^{2x}')">$$\frac{d}{dx}(e^{2x})$$</div>
+        </div>
+        
+    </div>
+    <footer>
+        <p>CalcDerivadas</p>
+    </footer>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.1.0/math.js"></script>
+    <script src="https://unpkg.com/mathlive/dist/mathlive.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+ 
+</body>
+</html>
